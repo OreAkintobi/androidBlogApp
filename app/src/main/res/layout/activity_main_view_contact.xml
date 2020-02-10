@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".MainViewContactActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/AppTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="BlogMe"
+        app:titleTextColor="@color/background" />
+
+
+    <TextView
+        android:id="@+id/placeholderViewBlogTitle"
+        style="@style/NormalText"
+        android:layout_width="330dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:text="Placeholder" />
+
+    <TextView
+        android:id="@+id/placeholderViewEmail"
+        style="@style/NormalText"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:textSize="16sp"
+        android:textAlignment="textStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/placeholderViewBlogPost"
+        app:layout_constraintStart_toStartOf="@+id/placeholderViewBlogPost"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderViewBlogPost"
+        tools:text="Placeholder"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/placeholderViewBlogPost"
+        style="@style/NormalText"
+        android:layout_width="345dp"
+        android:layout_marginTop="16dp"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/placeholderViewBlogTitle"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="@+id/placeholderViewBlogTitle"
+        app:layout_constraintTop_toBottomOf="@+id/placeholderViewBlogTitle"
+        app:layout_constraintVertical_bias="0.039"
+        tools:text="Placeholder" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
