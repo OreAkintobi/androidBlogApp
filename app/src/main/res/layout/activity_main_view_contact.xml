@@ -1,69 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background"
-    android:orientation="vertical"
-    tools:context=".MainViewContactActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <data>
+
+        <variable
+            name="blog"
+            type="com.ore.loginsignupui.Blog" />
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:elevation="4dp"
-        android:theme="@style/AppTheme"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="BlogMe"
-        app:titleTextColor="@color/background" />
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        tools:context=".MainViewContactActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/AppTheme"
+            app:title="@{blog.title}"
+            app:titleTextColor="@color/background" />
 
 
-    <TextView
-        android:id="@+id/placeholderViewBlogTitle"
-        style="@style/NormalText"
-        android:layout_width="330dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center_vertical"
-        android:textSize="20sp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:text="Placeholder" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/placeholderViewEmail"
-        style="@style/NormalText"
-        android:layout_width="250dp"
-        android:layout_height="20dp"
-        android:textSize="16sp"
-        android:textAlignment="textStart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/placeholderViewBlogPost"
-        app:layout_constraintStart_toStartOf="@+id/placeholderViewBlogPost"
-        app:layout_constraintTop_toBottomOf="@+id/placeholderViewBlogPost"
-        tools:text="Placeholder"
-        android:visibility="gone"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/placeholderViewBlogPost"
-        style="@style/NormalText"
-        android:layout_width="345dp"
-        android:layout_marginTop="16dp"
-        android:scrollbarStyle="insideOverlay"
-        android:scrollbars="vertical"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/placeholderViewBlogTitle"
-        app:layout_constraintHorizontal_bias="0.466"
-        app:layout_constraintStart_toStartOf="@+id/placeholderViewBlogTitle"
-        app:layout_constraintTop_toBottomOf="@+id/placeholderViewBlogTitle"
-        app:layout_constraintVertical_bias="0.039"
-        tools:text="Placeholder" />
+                <TextView
+                    android:id="@+id/placeholderViewBlogTitle"
+                    style="@style/NormalText"
+                    android:layout_width="match_parent"
+                    android:layout_height="37dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:text="@{blog.title}"
+                    android:textAlignment="center"
+                    android:textSize="20sp"
+                    tools:text="Blog Title" />
+
+                <TextView
+                    android:id="@+id/placeholderViewEmail"
+                    style="@style/NormalText"
+                    android:layout_width="250dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    tools:text="Placeholder" />
+
+                <TextView
+                    android:id="@+id/placeholderViewBlogPost"
+                    style="@style/NormalText"
+                    android:layout_width="357dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:justificationMode="inter_word"
+                    android:padding="10dp"
+                    android:scrollbarStyle="insideOverlay"
+                    android:scrollbars="vertical"
+                    android:text="@{blog.post}"
+                    android:textSize="16sp"
+                    tools:text="Blog Post" />
+
+            </LinearLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</layout>

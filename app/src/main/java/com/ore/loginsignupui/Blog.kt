@@ -4,4 +4,4 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Contact(val name: String?, val email: String, val phone: String) : Parcelable
+data class Blog(val title: String?, val email: String, val post: String) : Parcelable
